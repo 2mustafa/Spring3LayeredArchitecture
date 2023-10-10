@@ -15,3 +15,13 @@ where each layer has a specific responsibility:
 
 3. **Create the DAO Interface (EmployeeDAO):**
    - Define the `EmployeeDAO` interface with a `findAll()` method for data access.
+
+
+4. **Implement the DAO (EmployeeDAOImplement):**
+   - In `EmployeeDAOImplement`:
+     1. Define a field for `EntityManager`.
+     2. Inject the `EntityManager` using constructor injection.
+     3. Override the `findAll()` method:
+        - Create a query using `TypedQuery`.
+        - Execute the query and get the result list.
+        - Return the result list.
