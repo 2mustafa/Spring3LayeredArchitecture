@@ -12,3 +12,6 @@ where each layer has a specific responsibility:
 
 2. **Define the Entity (Employee):**
    - Create the `Employee` entity class with appropriate annotations for database mapping.
+
+3. **Create the DAO Interface (EmployeeDAO):**
+   - Define the `EmployeeDAO` interface with a `findAll()` method for data access.
