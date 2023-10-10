@@ -28,3 +28,8 @@ where each layer has a specific responsibility:
 
 5. **Create the Service Interface (EmployeeService):**
    - Define the `EmployeeService` interface with all methods from the DAO interface.
+
+
+6. **Implement the Service (EmployeeServiceImpl):**
+   - In `EmployeeServiceImpl`, inject the `EmployeeDAO` using constructor injection.
+   - Implement the methods, forwarding the calls to the DAO.
