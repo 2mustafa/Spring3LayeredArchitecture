@@ -5,3 +5,8 @@ where each layer has a specific responsibility:
 - Service Layer: Responsible for business logic and orchestrating data access.
 - Controller Layer: Responsible for handling HTTP requests and responses, acting as the entry point for web requests.
 
+1. **Database Configuration:**
+    - Configure database properties in `application.properties`.
+    - Specify the database URL, username, password, and other relevant properties.
+
+
