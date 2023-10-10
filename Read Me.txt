@@ -49,3 +49,95 @@ where each layer has a specific responsibility:
 
 
 8. **Test the Spring Boot Application: run the DemoApplication**
+
+
+
+
+
+
+## "Key Dependency Injection Patterns in a Spring Boot Application" ##
+
+1. In the DAO implementation:
+   inject EntityManager, and create queries connected to it.
+
+2. In the service implementation:
+   inject the DAO interface and have each overridden method return the corresponding DAO interface method.
+
+3. In the REST controller:
+   inject the service interface, and return service interface methods in @GetMapping endpoints.
+
+
+
+
+
+
+## EntityManager ##
+
+The EntityManager in JPA provides a set of commonly used methods for performing CRUD operations on entities.
+Here are some of them:
+
+    persist(entity):
+    Used to add a new entity to the persistence context, which eventually gets inserted into the database upon transaction commit.
+
+        public void addEmployee(Employee employee) {
+            entityManager.persist(employee);
+        }
+
+
+
+    find(entityClass, primaryKey):
+    Retrieves an entity by its primary key. It's used to fetch an entity from the database based on its unique identifier.
+
+    public Employee getEmployeeById(int id) {
+        return entityManager.find(Employee.class, id);
+    }
+
+
+
+    merge(entity):
+    Updates an existing entity or inserts a new one if the entity is not managed by the persistence context.
+
+        public Employee updateEmployee(Employee employee) {
+            return entityManager.merge(employee);
+        }
+
+
+
+    remove(entity):
+    Deletes an entity from the database.
+
+        public void deleteEmployee(Employee employee) {
+            entityManager.remove(employee);
+        }
+
+
+
+    flush():
+    Synchronizes the changes made in the persistence context with the database.
+    This method can be used to force the write of pending changes to the database before a transaction is committed.
+
+        public void saveAndFlush(Employee employee) {
+            entityManager.persist(employee);
+            entityManager.flush();
+        }
+
+
+
+    createQuery(jpql, resultClass):
+    Creates a JPA query using the Java Persistence Query Language (JPQL) and returns a TypedQuery object for executing the query.
+
+        public List<Employee> getEmployeesByLastName(String lastName) {
+            TypedQuery<Employee> query = entityManager.createQuery(
+                "SELECT e FROM Employee e WHERE e.lastName = :lastName", Employee.class);
+            query.setParameter("lastName", lastName);
+            return query.getResultList();
+        }
+
+
+
+    getReference(entityClass, primaryKey):
+    Returns a reference (proxy) to an entity without actually loading it from the database until a method is invoked on it. Useful for lazy loading.
+
+        public Employee getEmployeeReference(int id) {
+            return entityManager.getReference(Employee.class, id);
+        }
