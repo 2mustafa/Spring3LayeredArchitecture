@@ -10,3 +10,5 @@ where each layer has a specific responsibility:
     - Specify the database URL, username, password, and other relevant properties.
 
 
+2. **Define the Entity (Employee):**
+   - Create the `Employee` entity class with appropriate annotations for database mapping.
