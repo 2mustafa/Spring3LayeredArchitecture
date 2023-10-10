@@ -25,3 +25,6 @@ where each layer has a specific responsibility:
         - Create a query using `TypedQuery`.
         - Execute the query and get the result list.
         - Return the result list.
+
+5. **Create the Service Interface (EmployeeService):**
+   - Define the `EmployeeService` interface with all methods from the DAO interface.
