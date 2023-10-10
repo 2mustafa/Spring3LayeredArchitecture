@@ -33,3 +33,19 @@ where each layer has a specific responsibility:
 6. **Implement the Service (EmployeeServiceImpl):**
    - In `EmployeeServiceImpl`, inject the `EmployeeDAO` using constructor injection.
    - Implement the methods, forwarding the calls to the DAO.
+
+
+7. **Create the REST Controller (EmployeeRestController):
+   - Define the EmployeeRestController class.
+   - Annotate it with @RestController.
+   - Create a constructor for EmployeeRestController.
+   - Inject the EmployeeService.
+   - Define methods for various CRUD operations along with their corresponding endpoints:
+        - findAll() method: Annotated with @GetMapping("/employees") to retrieve all employees.
+        - getEmployee() method: Annotated with @GetMapping("/employees/{employeeId}") to retrieve an employee by ID.
+        - addEmployee() method: Annotated with @PostMapping("/employees") to add a new employee.
+        - updateEmployee() method: Annotated with @PutMapping("/employees") to update an existing employee.
+        - deleteEmployee() method: Annotated with @DeleteMapping("/employees/{employeeId}") to delete an employee by ID.
+
+
+8. **Test the Spring Boot Application: run the DemoApplication**
