@@ -1,0 +1,7 @@
+Using a layered architecture in Spring applications,
+where each layer has a specific responsibility:
+
+- DAO Layer: Responsible for data access and interaction with the database.
+- Service Layer: Responsible for business logic and orchestrating data access.
+- Controller Layer: Responsible for handling HTTP requests and responses, acting as the entry point for web requests.
+
