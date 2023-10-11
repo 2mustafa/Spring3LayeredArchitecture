@@ -3,9 +3,10 @@ package com.example.demo.service;
 import com.example.demo.Entity.Employee;
 import com.example.demo.dao.EmployeeDAO;
 import jakarta.transaction.Transactional;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class EmployeeServiceImplement implements EmployeeService {
 
     // 1. define field for EmployeeDAO
